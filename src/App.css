@@ -1,33 +1,117 @@
+*{
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background: #F2F2F2;
+  height:100%;
+  width:100%;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.App .header{
+  text-align: center;
+  height: 50px;
+  border-bottom: 0.1em solid rgb(214, 214, 214);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App .header p{
+  font-weight: bold;
+  padding: 15px;
+}
+
+.introduction{
+  display: flex;
+
+}
+.introduction .icon{
+  margin: 20px;
+}
+.introduction .icon img{
+  max-width: 70px;
+  max-height: 70px;
+  border-radius: 20px;
+}
+.introduction .name{
+  gap:0;
+}
+.introduction .name h1{
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-top: 10px;
+}
+.introduction .name span{
+  color: green;
+}
+
+/*detail*/
+.detail{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 20px;
+  overflow-x: auto;
+  gap : 10px;
+}
+.detail::-webkit-scrollbar{
+  width:0;
+}
+
+.detail-item{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.detail-item .video{
+  position: relative;
+}
+.detail-item .video .overlay img{
+  position: absolute;
+  z-index: 10;
+  max-width: 100px;
+  max-height:180px;
+  border-radius: 5px;
+  margin-top:-140px;
+}
+.detail-item .video .mediaImage{
+  max-width: 100px;
+  max-height:180px;
+  min-width: 100px;
+  min-height:180px;
+  border-radius: 5px;
+  z-index:-1;
+}
+.detail-item .video .mediaImage.open{
+  max-width: 100px;
+  max-height:170px;
+  min-width: 100px;
+  min-height:170px;
+  border-radius: 5px;
+  z-index:-1;
+  
+}
+
+.detail-item .PlayVideo{
+  position: absolute;
+  z-index: 11;
+  border-radius: 5px;
+  margin-top: -180px;
+}
+.detail-item .PlayVideo.open{
+  display: none;
+}
+
+.detail-item .buttons{
+  width:100px;
+  display: flex;
+}
+.detail-item .buttons a{
+  border: solid rgb(236, 230, 230);
+  padding-top: 6px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
 }
